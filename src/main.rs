@@ -691,7 +691,6 @@ async fn main() -> Result<()> {
 
     if cli.dry_run {
         eprintln!("[DRY-RUN] diffscope-fork dry run mode — no output written, no LLM calls made");
-        eprintln!("[DRY-RUN] Command: {:?}", cli.command);
         return Ok(());
     }
 
