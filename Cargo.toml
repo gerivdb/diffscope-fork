@@ -65,3 +65,7 @@ strip = true
 [[bin]]
 name = "diffscope"
 path = "src/main.rs"
+
+[[bin]]
+name = "kiva"
+path = "src/bin/kiva.rs"
