@@ -1,6 +1,8 @@
 #![allow(clippy::uninlined_format_args)]
 
 mod adapters;
+mod bridge;
+mod iris;
 mod commands;
 mod config;
 mod core;
@@ -510,6 +512,8 @@ enum Commands {
         #[command(subcommand)]
         command: DagCommands,
     },
+    #[command(about = "Expose Phase C bridge manifest for VDB/ARGUS/FLUENCE integration")]
+    Bridge,
 }
 
 #[derive(Subcommand)]
@@ -572,6 +576,10 @@ enum DagCommands {
         )]
         repro_validate: bool,
     },
+    Commands::Bridge => {
+        let manifest = bridge::phase_c::current()?;
+        println!("{}", serde_yaml::to_string(&manifest)?);
+    }
 }
 
 #[derive(Clone, Copy, Debug, ValueEnum)]

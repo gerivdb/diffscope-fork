@@ -71,6 +71,9 @@ gateway.out
 # Binary dumps
 bin/
 
+# Rust extra binaries
+!src/bin/
+
 # Tests (python pytest, non trackés)
 tests/
 

@@ -117,11 +117,17 @@ jobs:
             artifact_name: diffscope
             asset_name: diffscope-aarch64-apple-darwin
           
-          # Windows
-          - os: windows-latest
-            target: x86_64-pc-windows-msvc
-            artifact_name: diffscope.exe
-            asset_name: diffscope-x86_64-pc-windows-msvc.exe
+# Windows
+           - os: windows-latest
+             target: x86_64-pc-windows-msvc
+             artifact_name: diffscope.exe
+             asset_name: diffscope-x86_64-pc-windows-msvc.exe
+
+           # Kiva (IRIS integration)
+           - os: ubuntu-latest
+             target: x86_64-unknown-linux-musl
+             artifact_name: kiva
+             asset_name: kiva-x86_64-unknown-linux-musl
 
     runs-on: ${{ matrix.os }}
     
