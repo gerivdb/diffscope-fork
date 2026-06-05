@@ -116,6 +116,9 @@ struct Cli {
     )]
     vault_key: Option<String>,
 
+    #[arg(long, global = true, help = "Dry run: analyze without writing output or calling LLM")]
+    dry_run: bool,
+
     #[arg(long, global = true, default_value = "json")]
     output_format: OutputFormat,
 
@@ -684,6 +687,12 @@ async fn main() -> Result<()> {
             crate::config::ConfigValidationIssueLevel::Error => "Error",
         };
         eprintln!("{label}: {}", issue.message);
+    }
+
+    if cli.dry_run {
+        eprintln!("[DRY-RUN] diffscope-fork dry run mode — no output written, no LLM calls made");
+        eprintln!("[DRY-RUN] Command: {:?}", cli.command);
+        return Ok(());
     }
 
     match cli.command {
