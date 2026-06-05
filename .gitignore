@@ -34,3 +34,45 @@ eval/artifacts/
 
 # Docker
 .dockerignore
+
+# === ECOSYSTEME gerivdb / ENV2 ===
+
+# Kilo / Kilocode
+.kilo/
+.kilocode/
+
+# Data & runtime
+data/
+ngrok/
+env/
+archive/
+
+# Plans & PRDs (artefacts de travail, pas du code)
+PLAN/
+PRD/
+
+# Portable git (cloné séparément, pas tracké ici)
+git/
+
+# Scripts data & caches
+scripts/__pycache__/
+scripts/data/
+scripts/notion/
+scripts/operations/
+scripts/root-legacy/
+
+# Runtime artifacts
+read_db.js
+diff0.err
+diff0.out
+gateway.err
+gateway.out
+
+# Binary dumps
+bin/
+
+# Tests (python pytest, non trackés)
+tests/
+
+# Legacy
+.archive/
