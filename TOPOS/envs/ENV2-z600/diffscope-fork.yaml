@@ -1,0 +1,47 @@
+ id: diffscope-fork
+  version: "0.1.0"
+  profile: ENV2-z600
+  source_repo: gerivdb/diffscope-fork
+  fork_of: diff0-fork
+
+  bridges:
+    vdb:
+      enabled: true
+      adapter: manifest_only
+      sources:
+        - repo: gerivdb/VDB
+          ref: main
+          root: VDB/ECOS-CLI
+    argus:
+      enabled: true
+      adapter: manifest_only
+      sources:
+        - repo: gerivdb/ARGUS
+          ref: main
+    fluence:
+      enabled: true
+      adapter: manifest_only
+      sources:
+        - repo: gerivdb/FLUENCE
+          ref: main
+    diff0_fork:
+      enabled: true
+      upstream_repo: evalops/diffscope
+      upstream_ref: main
+      fork_repo: gerivdb/diffscope-fork
+      fork_ref: main
+      sync_mode: read_only
+
+  env2_contract:
+    binary_target: x86_64-unknown-linux-musl
+    output_binaries:
+      - diffscope
+    strip_binaries: true
+    build_time_budget_sec: 900
+    expected_binary_size_mb: 18
+
+  telemetry:
+    bridge_manifest_version: "0.1.0"
+    report:
+      format: yaml
+      path: TOPOS/envs/ENV2-z600/reports/diffscope-fork-bridge-report.yaml
