@@ -1,0 +1,16 @@
+# .swarm/node.yaml — Carte d'identité holographique
+# Chaque repo gerivdb possède ce fichier : c'est son ADN dans l'organisme
+# IntentHash: 0xSWARM_NODE_GENOME_20260622
+node:
+  name: diffscope-fork
+  full_name: gerivdb/diffscope-fork
+  url: https://github.com/gerivdb/diffscope-fork
+  layer: L4_TOOLS
+  strate: L4_TOOLS
+  role: "Fork: diffscope-fork"
+  lens: cold
+  phi_cps: 0.5
+  thousand_brains_ref: false
+  do_not_create: true
+  upstream: []
+  downstream: []
